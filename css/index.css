@@ -1,0 +1,25 @@
+.content{width: 750px;height: 100vh;background-image: url(../img/bg02);background-repeat: no-repeat;margin: 0 auto;}
+.propupbox{width: 750px;height: 100vh;position: relative;background-color: rgba(0, 0, 0, .5);}
+.propup{width: 750px;height: 1120px;position: absolute;left: 0;bottom: 0;background-color: #FFFFFF;border-radius: 50px 50px 0 0;z-index: 3;}
+.logo{width: 690px;height: 149px;position: absolute;z-index: 4;left: 30px;top: 40px;background-image: url(../img/logo);background-repeat: no-repeat;}
+.title{width: 750px;height: 36px;line-height: 36px;font-size: 36px;color: #333;text-align: center;position: absolute;left: 0;top: 256px;z-index: 4;font-weight: 600;}
+.conttext1{width: 676px;height: 174px;background-color: #f6f7f9;border-radius: 20px; display: flex;align-items: center;justify-content: center;position: absolute;left: 37px;top: 328px;z-index: 4;}
+.cont{font-size: 28px;line-height: 40px;width: 600px;color: #545658;}
+.cont span{color: #378ce4;}
+.conttext2{width: 670px;height: 175px;border: solid 3px #e7e7e7;border-radius: 20px;display: flex;align-items: center;position: absolute;left: 37px;top: 540px;z-index: 4;}
+.conttext2 .left{width: 412px;margin-left: 18px;}
+.conttext2 .left .text1{width: 412px;height: 38px;display: flex;align-items: center;font-size: 28px;color: #545658;}
+.conttext2 .left .text1 .icon1{width: 38px;height: 38px;margin-left: 10px;}
+.conttext2 .left .text2{width: 412px;margin-top: 18px;line-height: 40px;font-size: 28px;color: #545658;}
+.conttext2 .right{width: 168px;margin-left: 40px;height: 38px;display: flex;align-items: center;font-size: 28px;}
+.conttext2 .right .text1{font-size: 24px;color: #e96440;}
+.conttext2 .right .text2{font-size: 24px;color: #545658;margin-left: 10px;text-decoration: line-through;}
+.conttext2 .right img{margin-left: 20px;}
+.conttext3{width: 670px;height: 38px;display: flex;align-items: center;position: absolute;left: 37px;top: 905px;z-index: 4;font-size: 26px;color: #545658;cursor: pointer;}
+.conttext3 .icon2{width: 38px;height: 38px;}
+.conttext3 span{margin-left: 5px;color: #b8b8b8;}
+.conttext4{width: 670px;height: 76px;display: flex;align-items: center;justify-content: space-between; position: absolute;left: 37px;top: 975px;z-index: 4;font-size: 26px;color: #545658;}
+.conttext4 .text1{height: 42px;display:table-cell;vertical-align:bottom;font-size: 28px;color: #333;}
+.conttext4 .text1 .text2{font-size: 28px;font-weight: bold;color: #e96440;margin-left: 10px;}
+.conttext4 .text1 .text3{font-size: 40px;font-weight: bold;color: #e96440;}
+.conttext4 .button{width: 320px;height: 76px;background-color: #fce64e;border-radius: 76px;line-height: 76px;text-align: center;font-size: 30px;font-weight: 600;cursor: pointer;border:0px}

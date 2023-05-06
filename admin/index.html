@@ -34,6 +34,30 @@
             correctLevel : QRCode.CorrectLevel.H
         });
 
+        // 加载 logo 图片
+        var logo = new Image();
+        logo.onload = function() {
+            // 创建一个新的 canvas 元素
+            var canvas = document.createElement("canvas");
+            canvas.width = qrcode._oDrawing._elCanvas.width;
+            canvas.height = qrcode._oDrawing._elCanvas.height;
+
+            // 将二维码绘制到 canvas 上
+            var context = canvas.getContext("2d");
+            context.drawImage(qrcode._oDrawing._elCanvas, 0, 0);
+
+            // 将 logo 绘制到 canvas 中间
+            var x = canvas.width / 2 - logo.width / 2;
+            var y = canvas.height / 2 - logo.height / 2;
+            context.drawImage(logo, x, y);
+
+            // 替换二维码元素的内容为新的 canvas 元素
+            var qrcodeElem = document.getElementById("qrcode");
+            qrcodeElem.innerHTML = "";
+            qrcodeElem.appendChild(canvas);
+        };
+        logo.src = "logo64.png";
+
 
     });
 

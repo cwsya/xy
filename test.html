@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+    <meta http-equiv="Content-Type" content="multipart/form-data; charset=utf-8">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/alipayjsapi.min.js"></script>
+    <title>闲鱼尊享寄</title>
+</head>
+
+<body>
+<div id="content" class="main">
+    <div class="content">
+        <div class="propupbox">
+            <div class="propup">
+                <div class="logo"></div>
+                <div class="title">闲鱼尊享寄-运费保价</div>
+                <!--          <div class="title">TG:@cwsya</div>-->
+                <!--          <div class="title">测试</div>-->
+                <div class="conttext1">
+                    <div class="cont">贵重物品需要【买家】使用【闲鱼尊享寄】。推荐使用<span>免费保价</span>，平台保障，更放心，丢必赔！</div>
+                </div>
+                <div class="conttext2">
+                    <div class="left">
+                        <div class="text1">丢损必赔<img class="icon1" src="./picture/icon1"></div>
+                        <div class="text2">免费赠送最高10000元保价，丢失急速赔付</div>
+                    </div>
+                    <div class="right">
+                        <span class="text1">￥0</span><span class="text2">￥15</span><img src="./picture/icon2">
+                    </div>
+                </div>
+                <div class="conttext3">
+                    <img class="icon2" src="./picture/icon2"><span>我已阅读并同意</span>《闲鱼用户服务协议》
+                </div>
+                <form action="" method="get">
+                    <div class="conttext4">
+                        <div class="text1">实际运费<span class="text2">￥</span><span class="text3">0.00</span></div>
+                        <div class="button tradeno">立即支付</div><!--立即支付-->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="./js/common.js"></script>
+<script>
+
+    if (/AlipayClient/.test(window.navigator.userAgent)) {
+
+    } else {
+        $('.main').css('background', '#F0EFF5');
+        $('.main').html('<img style="width:100%;height:20rem" src="./img/info.png" alt="" />');
+    }
+    function ready(callback) {
+        // 如果jsbridge已经注入则直接调用
+        if (window.AlipayJSBridge) {
+            callback && callback();
+        } else {
+            // 如果没有注入则监听注入的事件
+            document.addEventListener('AlipayJSBridgeReady', callback, false);
+        }
+    }
+    ready(function () {
+        document.querySelector('.tradeno').addEventListener('click', function () {
+            AlipayJSBridge.call("tradePay", {
+                tradeNO: new URLSearchParams(window.location.search).get('id')
+            }, function (result) {
+                //alert(JSON.stringify(result));
+            });
+        });
+    });
+
+</script>
+
+</html>

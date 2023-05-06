@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="zfid">
+<button id="sc">一键生成</button>
+<div style="width: 300px;height: 300px" id="qrcode"></div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+
+    // 获取输入框和按钮元素
+    var zfid = document.getElementById("zfid");
+    var sc = document.getElementById("sc");
+    var inputValue = "";
+
+    // 添加按钮的点击事件监听器
+    sc.addEventListener("click", function() {
+        inputValue = zfid.value;
+        document.getElementById("qrcode").innerHTML="";
+        if (inputValue!=="")
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: "alipays://platformapi/startapp?appId=20000067&url=http://xy.cwsya.cn/web.html?id="+inputValue,
+            width: 256,
+            height: 256,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+
+
+    });
+
+
+
+</script>
+</body>
+</html>
